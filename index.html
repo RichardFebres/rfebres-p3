@@ -23,56 +23,51 @@
 
   <body>
 
-  <div id="app">
+	<div class="container" id="app">
 
-	  <div class="container">
+	    <div class="header">
 
-		  <div class="header">
+	      <div class="container">
+	        <h1 id="app_title">{{ title }}</h1>
+	      </div>
 
-			  <div class="container">
-				  <h1 id="my_app">{{ title }}</h1>
-			  </div>
-
-		  </div>
-
-		  <div class="main">
-
-			  <div class="container">
-
-				  <div class="col-md-6">
-					  <div class="thumbnail">
-
-						  <img class="poster"  />
-						  <div class="imageInfo">{{ posterindex }}</div>
-
-						  <p class="title">{{ title }} {{ country }}</p>
-						  <p class="score"><i class="fa fa-star" aria-hidden="true"></i> {{ iscore }}</p>
-						  <p class="runtime">Runtime: {{ runtime }}</p>
-						  <p class="released">Released: {{ released }} | Rated: {{ rating }}</p>
-						  <p class="websites">Websites: <a>{{ imdb }}</a> | <a>{{ websites }}</a></p>
-
-						  <div class="social">
-							  <p class="likes"><i class="fa fa-thumbs-up" aria-hidden="true"></i> {{ likes }}</p>
-							  <p class="dislikes"><i class="fa fa-thumbs-down" aria-hidden="true"></i> {{ dislikes }}</p>
-						  </div>
-					  </div>
-				  </div>
-
-			  </div>
-		  </div>
-
-		  <div class="footer">
-			  <div class="container">
-				  <a id="github" class="btn btn-lg btn-warning">
-					  <i class="fa fa-lg fa-github pull-left" aria-hidden="true"></i>{{owner}} {{ github }}
-				  </a>
-			  </div>
-		  </div>
-	  </div>
+	    </div>
 
 
-  </div>
+	    <div class="main">
 
+	      <div class="container">
+
+	        <div class="col-md-6">
+	            <div class="thumbnail">
+
+						<img :src="movies[0].posters[0]" class="poster" />
+						<div class="imageInfo">{{ movies[0].posterindex }}</div>
+
+						<p class="title">{{ movies[0].title }} {{ movies[0].country }}</p>
+						<p class="score"><i class="fa fa-star" aria-hidden="true"></i> {{ movies[0].iscore }}</p>
+						<p class="runtime">Runtime: {{ movies[0].runtime }}</p>
+						<p class="released">Released: {{ movies[0].released }} | Rated: {{ movies[0].rating }}</p>
+						<p class="websites">Websites: <a>{{ movies[0].imdb }}</a> | <a>{{ movies[0].websites }}</a></p>
+
+			            <div class="social">
+			              <p class="likes"><i class="fa fa-thumbs-up" aria-hidden="true"></i> {{ movies[0].likes }}</p>
+			              <p class="dislikes"><i class="fa fa-thumbs-down" aria-hidden="true"></i> {{ movies[0].dislikes }}</p>
+			            </div>
+	            </div>
+	        </div>
+
+	      </div>
+	    </div>
+
+	    <div class="footer">
+	      <div class="container">
+			<a id="github" class="btn btn-lg btn-warning">
+				<i class="fa fa-lg fa-github pull-left" aria-hidden="true"></i>{{owner}} {{ github }}
+	  		</a>
+	      </div>
+	    </div>
+	</div>
 
   	<!-- This load the Vue.js code -->
 	<script type="text/javascript" src="site.js"></script>
