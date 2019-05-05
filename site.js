@@ -21,8 +21,8 @@
 */
 
 
-const vue_app = new Vue({
-      el: '#app',
+const my_app = new Vue({
+      el: '#my_app',
       // This automatically imports your movies.json file and puts it into
       //   the variable: movies
       created () {
@@ -41,6 +41,35 @@ const vue_app = new Vue({
       },
       methods: {
             /* ADD FUNCTIONS/METHODS FOR STEP 7 HERE */
+            makeTextDate(dateArray) {
+                  let textDate = moment("" + dateArray[0] + dateArray[1] + dateArray[2]).calendar();
+                  return textDate;
+            },
+
+            like(movie) {
+                  movie.likes++;
+            },
+
+            dislike(movie) {
+                  movie.dislikes++;
+            },
+
+            posterClick(movie) {
+                  if (movie.posterindex >= movie.posters.length - 1) {
+                        movie.posterindex = 0;
+                  } else {
+                        movie.posterindex++;
+                  }
+            },
+            timeText(minutes) {
+                  let num = minutes;
+                  let hours = num / 60;
+                  let rhours = Math.floor(hours);
+                  let mins = (hours = rhours);
+                  let rminutes = Math.round(mins);
+                  return num = rhours + " hour(s) and " + rminutes + " minutes.";
+            }
+
       }
 })
 	

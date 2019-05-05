@@ -10,5 +10,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="vue" level="application" />
     <orderEntry type="library" name="vue.common.dev" level="application" />
+    <orderEntry type="library" name="moment" level="application" />
   </component>
 </module>

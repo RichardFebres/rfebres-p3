@@ -15,6 +15,9 @@
 
 	<!-- DO NOT CHANGE ANYTHING ABOVE THIS LINE-->
 
+	<!--Moment.js-->
+	<script src=https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js></script>
+
 	<!-- Javascript Framework (e.g., vue.js) (ADD HERE) -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.common.dev.js"></script>
 
@@ -23,14 +26,13 @@
 
   <body>
 
-	<div class="container" id="app">
+	<div class="container" id="my_app">
 
 	    <div class="header">
 
 	      <div class="container">
 	        <h1 id="app_title">{{ title }}</h1>
 	      </div>
-
 	    </div>
 
 
@@ -38,21 +40,21 @@
 
 	      <div class="container">
 
-	        <div class="col-md-6">
+	        <div class="col-md-6" v-for="movie in movies">
 	            <div class="thumbnail">
 
-						<img :src="movies[0].posters[0]" class="poster" />
-						<div class="imageInfo">{{ movies[0].posterindex }}</div>
+						<img :src="movie.posters[movie.posterindex]" @click="posterClick(movie)" class="poster" />
+						<div class="imageInfo">Poster #: {{ movie.posterindex  + 1 }} of {{ movie.posters.length }} </div>
 
-						<p class="title">{{ movies[0].title }} {{ movies[0].country }}</p>
-						<p class="score"><i class="fa fa-star" aria-hidden="true"></i> {{ movies[0].iscore }}</p>
-						<p class="runtime">Runtime: {{ movies[0].runtime }}</p>
-						<p class="released">Released: {{ movies[0].released }} | Rated: {{ movies[0].rating }}</p>
-						<p class="websites">Websites: <a>{{ movies[0].imdb }}</a> | <a>{{ movies[0].websites }}</a></p>
+						<p class="title">{{ movie.title }} | {{ movie.country }}</p>
+						<p class="score"><i class="fa fa-star" aria-hidden="true"></i> {{ movie.iscore }}</p>
+						<p class="runtime">Runtime: {{ timeText(movie.runtime) }}</p>
+						<p class="released">Released: {{ makeTextDate(movie.released) }} | Rated: {{ movie.rating }}</p>
+						<p class="websites">Websites: <a :href="movie.imdb">IMDB</a> | <a :href="movie.website">Official</a></p>
 
 			            <div class="social">
-			              <p class="likes"><i class="fa fa-thumbs-up" aria-hidden="true"></i> {{ movies[0].likes }}</p>
-			              <p class="dislikes"><i class="fa fa-thumbs-down" aria-hidden="true"></i> {{ movies[0].dislikes }}</p>
+			              <p class="likes" @click="like(movie.likes)"><i class="fa fa-thumbs-up" aria-hidden="true"></i> {{ movie.likes }}</p>
+			              <p class="dislikes" @click="dislike(movie.dislikes)"><i class="fa fa-thumbs-down" aria-hidden="true"></i> {{ movie.dislikes }}</p>
 			            </div>
 	            </div>
 	        </div>
@@ -62,8 +64,8 @@
 
 	    <div class="footer">
 	      <div class="container">
-			<a id="github" class="btn btn-lg btn-warning">
-				<i class="fa fa-lg fa-github pull-left" aria-hidden="true"></i>{{owner}} {{ github }}
+			<a :href="github" id="github" class="btn btn-lg btn-warning">
+				<i class="fa fa-lg fa-github pull-left" aria-hidden="true"></i>{{ owner }}
 	  		</a>
 	      </div>
 	    </div>
