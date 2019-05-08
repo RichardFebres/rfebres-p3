@@ -25,12 +25,13 @@
 </head>
 
   <body>
-
+	<!--Bind app to element -->
 	<div class="container" id="my_app">
 
 	    <div class="header">
 
 	      <div class="container">
+			  <!--Show Title -->
 	        <h1 id="app_title">{{ title }}</h1>
 	      </div>
 	    </div>
@@ -41,6 +42,7 @@
 	      <div class="container">
 
 	        <div class="col-md-6" v-for="movie in movies">
+				<!--Movie Poster Thumbail & Accompanying Data -->
 	            <div class="thumbnail">
 
 						<img :src="movie.posters[movie.posterindex]" @click="posterClick(movie)" class="poster" />
@@ -62,6 +64,7 @@
 	      </div>
 	    </div>
 
+		<!--Link to my Github -->
 	    <div class="footer">
 	      <div class="container">
 			<a :href="github" id="github" class="btn btn-lg btn-warning">

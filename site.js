@@ -41,6 +41,7 @@ const my_app = new Vue({
       },
       methods: {
             /* ADD FUNCTIONS/METHODS FOR STEP 7 HERE */
+            //I don't like date time objects so I chose to use a 3rd party library for this to make it more succint
             makeTextDate(dateArray) {
                   let textDate = moment("" + dateArray[0] + dateArray[1] + dateArray[2]).calendar();
                   return textDate;
@@ -54,6 +55,7 @@ const my_app = new Vue({
                   movie.dislikes++;
             },
 
+            //Increment movie poster index
             posterClick(movie) {
                   if (movie.posterindex >= movie.posters.length - 1) {
                         movie.posterindex = 0;
@@ -61,6 +63,8 @@ const my_app = new Vue({
                         movie.posterindex++;
                   }
             },
+
+            //Convert raw runtime into hours & minutes
             timeText(minutes) {
                   let mins = Math.round(minutes % 60);
                   let hours = minutes / 60;
