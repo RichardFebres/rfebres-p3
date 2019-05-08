@@ -68,5 +68,48 @@
             "likes": 812,
             "dislikes": 101,
             "posterindex": 0
+      },
+      {
+            "title": "Spider-Man: Into the Spiderverse",
+            "iscore": 8.5,
+            "rating": "PG",
+            "runtime": 117,
+            "released": [2018, 12, 14],
+            "country": "USA",
+            "posters": ["img/spiderverse1.jpg", "img/spiderverse2.jpg"],
+            "imdb":"https://www.imdb.com/title/tt4633694/?ref_=nv_sr_1?ref_=nv_sr_1",
+            "website": "https://twitter.com/SpiderVerse?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor",
+            "likes": 134,
+            "dislikes": 0,
+            "posterindex": 0
+      },
+      {
+            "title": "Requiem for a Dream",
+            "iscore": 8.3,
+            "rating": "PG",
+            "runtime": 102,
+            "released": [2000, 12, 15],
+            "country": "USA",
+            "posters": ["img/requiem.jpg", "img/requiem2.jpg"],
+            "imdb":"https://www.imdb.com/title/tt0180093/?ref_=nv_sr_1?ref_=nv_sr_1",
+            "website": "https://www.nytimes.com/2000/10/06/movies/film-review-addicted-to-drugs-and-drug-rituals.html",
+            "likes": 58,
+            "dislikes": 7,
+            "posterindex": 0
+      },
+      {
+            "title": "Inglorious Basterds",
+            "iscore": 8.3,
+            "rating": "PG",
+            "runtime": 153,
+            "released": [2009, 8, 21],
+            "country": "USA",
+            "posters": ["img/inglorious.jpg", "img/inglorious2.jpg"],
+            "imdb":"https://www.imdb.com/title/tt0361748/?ref_=nv_sr_1?ref_=nv_sr_1",
+            "website": "https://www.vulture.com/2009/08/basterds_versus_bastards.html",
+            "likes": 86,
+            "dislikes": 3,
+            "posterindex": 0
       }
+
 ]

@@ -62,15 +62,11 @@ const my_app = new Vue({
                   }
             },
             timeText(minutes) {
-                  let num = minutes;
-                  let hours = num / 60;
-                  let rhours = Math.floor(hours);
-                  let mins = (hours = rhours);
-                  let rminutes = Math.round(mins);
-                  return num = rhours + " hour(s) and " + rminutes + " minutes.";
+                  let mins = Math.round(minutes % 60);
+                  let hours = minutes / 60;
+                  return Math.trunc(hours) + " hour(s) and " + mins + " minutes";
             }
-
       }
-})
+});
 	
 
